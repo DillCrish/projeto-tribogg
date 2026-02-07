@@ -1,117 +1,127 @@
-<section class="bg-slate-900 relative h-screen min-h-[800px] w-full overflow-hidden font-sans selection:bg-[#00f2ea] selection:text-black">
-  
-  <!-- 1. Background Image Layer -->
-  <div class="bg-[url('/images/background-gaules.png')] bg-cover bg-center h-screen absolute inset-0 z-0"></div>
+<section
+    class="bg-slate-900 relative h-screen min-h-[800px] w-full overflow-hidden font-sans selection:bg-[#00f2ea] selection:text-black">
 
-  <!-- 2. Main Content Grid -->
-  <div class="relative z-10 container mx-auto px-2 md:px-12 h-full flex flex-col lg:flex-row items-center justify-between pt-12 pb-32">
-    
-    <!-- LEFT CONTENT: Typography -->
-    <div class="flex flex-col items-start justify-center h-full w-full lg:w-1/2">    
-      <!-- Main Title -->
-      <h1 class="text-8xl md:text-8xl lg:text-[150px] font-semibold leading-[0.85] text-white">
-        Casa da<br>
-        <span class="text-[#0178FF]">Tribo</span>
-      </h1>
-    </div>
+    <!-- 1. Background Image Layer -->
+    <div class="bg-[url('/images/background-gaules.png')] bg-cover bg-center h-screen absolute inset-0 z-0"></div>
 
-    <!-- RIGHT CONTENT: Floating Stream Card -->
-    <div class="w-full lg:w-[550px] mt-10 lg:mt-0 flex flex-col items-end">
-      
-      <!-- Card Container -->
-      <div class="w-full bg-black/40 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden">
-        
-        <!-- Video Area (Iframe Placeholder) -->
-        <div class="relative aspect-video w-full bg-black group cursor-pointer">
-          <!-- Thumbnail Image -->
-         <iframe
-    [src]="twitchUrl"
-    class="w-full h-full object-cover"
-    frameborder="0"
-    allowfullscreen="true"
-    scrolling="no">
-  </iframe>
-          <!-- Overlays inside video -->          
-          <div class="absolute top-4 left-1/2 -translate-x-1/2">
+    <!-- 2. Main Content Grid -->
+    <div
+        class="relative z-10 container mx-auto px-2 md:px-12 h-full flex flex-col lg:flex-row items-center justify-between pt-12 pb-32">
+
+        <!-- LEFT CONTENT: Typography -->
+        <div class="flex flex-col items-start justify-center h-full w-full lg:w-1/2">
+            <!-- Main Title -->
+            <h1 class="text-8xl md:text-8xl lg:text-[150px] font-semibold leading-[0.85] text-white">
+                Casa da<br>
+                <span class="text-[#0178FF]">Tribo</span>
+            </h1>
+        </div>
+
+        <!-- RIGHT CONTENT: Floating Stream Card -->
+        <div class="w-full lg:w-[550px] mt-10 lg:mt-0 flex flex-col items-end">
+
+            <!-- Card Container -->
+            <div class="w-full bg-black/40 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden">
+
+                <!-- Video Area (Iframe Placeholder) -->
+                <div class="relative aspect-video w-full bg-black group cursor-pointer">
+                    <!-- Thumbnail Image -->
+                    <iframe
+                        [src]="twitchUrl"
+                        class="w-full h-full object-cover"
+                        frameborder="0"
+                        allowfullscreen="true"
+                        scrolling="no">
+                    </iframe>
+                    <!-- Overlays inside video -->
+                    <div class="absolute top-4 left-1/2 -translate-x-1/2">
             <span class="text-white/60 text-[10px] font-bold uppercase tracking-widest text-shadow-lg">
               {{ streamInfo.game }}
             </span>
-          </div>
+                    </div>
 
-          <div class="absolute top-1/2 right-4 -translate-y-1/2 flex items-center gap-2">
-             <div class="w-8 h-8 rounded-full bg-blue-500/20 border border-blue-500/50 flex items-center justify-center">
-                <i class="fa-brands fa-twitch text-white"></i>
-             </div>
-             <span class="text-white font-bold text-xs">{{ streamInfo.channel }}</span>
-          </div>
-          
-          <!-- Title Overlay -->
-          <div class="absolute bottom-6 right-6 text-right">
-            <h3 class="text-white text-2xl font-black italic leading-none shadow-black drop-shadow-md">
-              {{ streamInfo.title }}
-            </h3>
-          </div>
-          
-          <!-- Play Button Overlay (Hover) -->
-          <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 pointer-events-none">
-            <i class="fa-solid fa-play text-5xl text-[#00f2ea] drop-shadow-[0_0_15px_rgba(0,242,234,0.5)]"></i>
-          </div>
+                    <div class="absolute top-1/2 right-4 -translate-y-1/2 flex items-center gap-2">
+                        <div
+                            class="w-8 h-8 rounded-full bg-blue-500/20 border border-blue-500/50 flex items-center justify-center">
+                            <i class="fa-brands fa-twitch text-white"></i>
+                        </div>
+                        <span class="text-white font-bold text-xs">{{ streamInfo.channel }}</span>
+                    </div>
+
+                    <!-- Title Overlay -->
+                    <div class="absolute bottom-6 right-6 text-right">
+                        <h3 class="text-white text-2xl font-black italic leading-none shadow-black drop-shadow-md">
+                            {{ streamInfo.title }}
+                        </h3>
+                    </div>
+
+                    <!-- Play Button Overlay (Hover) -->
+                    <div
+                        class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 pointer-events-none">
+                        <i class="fa-solid fa-play text-5xl text-[#00f2ea] drop-shadow-[0_0_15px_rgba(0,242,234,0.5)]"></i>
+                    </div>
+                </div>
+
+                <!-- Controls Bar (Below Video) -->
+                <div class="p-4 flex items-center justify-between gap-4 bg-[#0f0f0f]/80">
+
+                    <!-- Left: Text Link -->
+                    <div
+                        class="hidden sm:flex items-center gap-2 text-[9px] font-bold uppercase tracking-widest text-white/40 hover:text-white cursor-pointer transition">
+                        <i class="fa-solid fa-bars text-[#00f2ea]"></i>
+                        Outras Transmissões
+                    </div>
+
+                    <!-- Center: Arrows & Category -->
+                    <div class="flex items-center gap-4">
+                        <button class="text-white/40 hover:text-[#00f2ea] transition"><i
+                            class="fa-solid fa-chevron-left"></i></button>
+                        <span
+                            class="text-[9px] font-bold uppercase text-white/60 tracking-wider">Counter-Strike 2</span>
+                        <button class="text-white/40 hover:text-[#00f2ea] transition"><i
+                            class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+
+                    <!-- Right: CTA Button -->
+                    <button
+                        class="bg-[#00f2ea] hover:bg-white text-black px-4 py-2 rounded-sm text-[10px] font-black uppercase tracking-wide flex items-center gap-2 transition-colors duration-300">
+                        Me leve a transmissão <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
         </div>
-
-        <!-- Controls Bar (Below Video) -->
-        <div class="p-4 flex items-center justify-between gap-4 bg-[#0f0f0f]/80">
-          
-          <!-- Left: Text Link -->
-          <div class="hidden sm:flex items-center gap-2 text-[9px] font-bold uppercase tracking-widest text-white/40 hover:text-white cursor-pointer transition">
-            <i class="fa-solid fa-bars text-[#00f2ea]"></i>
-            Outras Transmissões
-          </div>
-
-          <!-- Center: Arrows & Category -->
-          <div class="flex items-center gap-4">
-            <button class="text-white/40 hover:text-[#00f2ea] transition"><i class="fa-solid fa-chevron-left"></i></button>
-            <span class="text-[9px] font-bold uppercase text-white/60 tracking-wider">Counter-Strike 2</span>
-            <button class="text-white/40 hover:text-[#00f2ea] transition"><i class="fa-solid fa-chevron-right"></i></button>
-          </div>
-
-          <!-- Right: CTA Button -->
-          <button class="bg-[#00f2ea] hover:bg-white text-black px-4 py-2 rounded-sm text-[10px] font-black uppercase tracking-wide flex items-center gap-2 transition-colors duration-300">
-            Me leve a transmissão <i class="fa-solid fa-arrow-right"></i>
-          </button>
-        </div>
-      </div>
-      
     </div>
-  </div>
 
-  <!-- 3. Bottom Absolute Elements -->
-<div class="absolute mx-48 bottom-20 md:bottom-28 left-6 md:left-16 z-20 opacity-90 pb-12">
+    <!-- 3. Bottom Absolute Elements -->
+    <div class="absolute mx-48 bottom-20 md:bottom-28 left-6 md:left-16 z-20 opacity-90 pb-12">
         <span class="text-white font-regular text-4xl text-[32px] md:text-md">
           La
         </span><br>
-         <span class="text-white font-bold text-4xl text-[32px] md:text-md">
+        <span class="text-white font-bold text-4xl text-[32px] md:text-md">
           Tribonera
         </span>
-  </div>
-
-  <!-- Mouse Scroll Indicator -->
-  <div class="absolute bottom-20 md:bottom-28 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-20">
-    <div class="w-5 h-8 border-2 border-white/30 rounded-full flex justify-center pt-2">
-      <div class="w-1 h-1.5 bg-white rounded-full animate-scroll"></div>
     </div>
-    <span class="text-[9px] font-bold uppercase text-white/30 tracking-[0.2em]">Scroll</span>
-  </div>
 
-  <!-- Gaules Logo (Bottom Right) -->
-  <div class="absolute bottom-20 md:bottom-28 right-6 md:right-16 z-20 opacity-90">
-    <!-- Using text as SVG placeholder, replace with actual SVG if available -->
-    <div class="flex items-center gap-2">
-        <i class="fa-solid fa-helmet-safety text-3xl text-white"></i> <!-- Placeholder Icon -->
-<img src="images/logo-gaules.svg" alt="Logo Tribo" class="w-32">
+    <!-- Mouse Scroll Indicator -->
+    <div class="absolute bottom-20 md:bottom-28 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-20">
+        <div class="w-5 h-8 border-2 border-white/30 rounded-full flex justify-center pt-2">
+            <div class="w-1 h-1.5 bg-white rounded-full animate-scroll"></div>
+        </div>
+        <span class="text-[9px] font-bold uppercase text-white/30 tracking-[0.2em]">Scroll</span>
     </div>
-  </div>
-  <!-- 4. The White Curve (Transition to next section) -->
-  <!-- This element sits at the very bottom and curves upwards into the hero image -->
-  <div class="absolute -bottom-1 left-0 w-full h-16 md:h-24 bg-white rounded-t-[40px] md:rounded-t-[80px] z-30 shadow-[0_-10px_40px_rgba(0,0,0,0.2)]"></div>
+
+    <!-- Gaules Logo (Bottom Right) -->
+    <div class="absolute bottom-20 md:bottom-28 right-6 md:right-16 z-20 opacity-90">
+        <!-- Using text as SVG placeholder, replace with actual SVG if available -->
+        <div class="flex items-center gap-2">
+            <i class="fa-solid fa-helmet-safety text-3xl text-white"></i> <!-- Placeholder Icon -->
+            <img src="images/logo-gaules.svg" alt="Logo Tribo" class="w-32">
+        </div>
+    </div>
+    <!-- 4. The White Curve (Transition to next section) -->
+    <!-- This element sits at the very bottom and curves upwards into the hero image -->
+    <div
+        class="absolute -bottom-1 left-0 w-full h-16 md:h-24 bg-white rounded-t-[40px] md:rounded-t-[80px] z-30 shadow-[0_-10px_40px_rgba(0,0,0,0.2)]"></div>
 
 </section>
