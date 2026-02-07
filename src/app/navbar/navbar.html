@@ -1,34 +1,36 @@
 <nav
     class="fixed w-full z-50 top-0 left-0 border-b border-white/5 bg-white/10-800/80 backdrop-blur-md text-white">
     <div class="wrapper flex items-center justify-between py-5">
-    <div class="flex items-center">
-        <img ngSrc="images/logo-tribo.svg" alt="Logo Tribo" class="w-24" height="1000" width="1000">
-    </div>
+        <div class="flex items-center">
+            <img ngSrc="images/logo-tribo.svg" alt="Logo Tribo" class="w-35" height="1000" width="1000">
+        </div>
 
-    <div class="flex items-center gap-6">
-        <a href="#"
-           class="hidden md:flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-white hover:text-cyan-400 transition">
-            <fa-icon [icon]="faUser"></fa-icon>
-            Entrar Agora
-        </a>
+        <div class="flex items-center gap-6">
+            <a href="#"
+               class="hidden  md:flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-white hover:text-cyan-400 transition">
+                <fa-icon class="text-sm" [icon]="faUser"></fa-icon>
+                <span class="text-sm">Entrar Agora</span>
+            </a>
 
-        <button
-            class="hidden md:flex bg-purple-800 hover:bg-purple-900 text-white px-5 py-2 rounded-sm text-[10px] font-black uppercase items-center gap-2 transition-colors duration-300 shadow-lg shadow-cyan-500/20">
-            <fa-icon [icon]="faTwitch"></fa-icon>
-            Conectar com Twitch
-        </button>
+            <button
+                class="hidden md:flex bg-purple-800 hover:bg-purple-900 text-white px-5 py-2 rounded-sm text-[10px] font-black uppercase items-center gap-2 transition-colors duration-300 shadow-lg shadow-cyan-500/20">
+                <fa-icon class="text-sm" [icon]="faTwitch"></fa-icon>
+                <span class="text-sm">Conectar com Twitch</span>
+            </button>
 
-        <button (click)="toggleMenu()" class="md:hidden text-white text-xl hover:text-cyan-400 transition cursor-pointer p-2">
-            <fa-icon [icon]="isOpen() ? faXmark : faBars"></fa-icon>
-        </button>
-    </div>
+            <button (click)="toggleMenu()"
+                    class="md:hidden text-white text-xl hover:text-cyan-400 transition cursor-pointer p-2">
+                <fa-icon [icon]="isOpen() ? faXmark : faBars"></fa-icon>
+            </button>
+        </div>
     </div>
 
     @if (isOpen()) {
         <!-- Mobile Menu Dropdown -->
-        <div class="absolute top-full left-0 w-full bg-slate-800 backdrop-blur-md border-b border-white/5 flex flex-col p-6 gap-4 md:hidden shadow-2xl shadow-cyan-500/20 animate-slide-down">
+        <div
+            class="absolute top-full left-0 w-full bg-slate-800 backdrop-blur-md border-b border-white/5 flex flex-col p-6 gap-4 md:hidden shadow-2xl shadow-cyan-500/20 animate-slide-down">
             <button
-               class="bg-[#0178FF] hover:bg-cyan-700 text-white px-5 py-3 rounded-sm text-xs font-black uppercase flex items-center justify-center gap-2 transition-colors duration-300 shadow-lg shadow-cyan-500/20 w-full">
+                class="bg-[#0178FF] hover:bg-cyan-700 text-white px-5 py-3 rounded-sm text-xs font-black uppercase flex items-center justify-center gap-2 transition-colors duration-300 shadow-lg shadow-cyan-500/20 w-full">
                 <fa-icon [icon]="faUser" class="w-5 text-center"></fa-icon>
                 Entrar Agora
             </button>
