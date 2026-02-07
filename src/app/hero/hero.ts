@@ -1,11 +1,11 @@
 import {Component, inject, OnInit} from '@angular/core';
-import {CommonModule} from '@angular/common';
+import {CommonModule, NgOptimizedImage} from '@angular/common';
 import {DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-hero',
   standalone: true,
-  imports: [CommonModule],
+    imports: [CommonModule, NgOptimizedImage],
   templateUrl: './hero.html', // Verifique se o nome do arquivo HTML está correto aqui
   styleUrls: ['./hero.css'],
 })

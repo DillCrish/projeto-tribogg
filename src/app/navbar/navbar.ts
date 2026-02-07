@@ -1,14 +1,13 @@
-import {CommonModule} from '@angular/common';
+import {CommonModule, NgOptimizedImage} from '@angular/common';
 import {Component, signal} from '@angular/core';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {faTwitch} from "@fortawesome/free-brands-svg-icons/faTwitch";
 import {faUser} from "@fortawesome/free-regular-svg-icons";
 import {faBars, faXmark} from '@fortawesome/free-solid-svg-icons';
-import {RouterLink} from "@angular/router";
 
 @Component({
     selector: 'app-navbar',
-    imports: [CommonModule, FontAwesomeModule, RouterLink],
+    imports: [CommonModule, FontAwesomeModule, NgOptimizedImage],
     templateUrl: './navbar.html',
     styleUrl: './navbar.css',
 })
