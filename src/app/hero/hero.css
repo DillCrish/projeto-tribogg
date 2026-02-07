@@ -1,0 +1,13 @@
+/* Custom utility for the hollow text effect if needed */
+.text-shadow-lg {
+    text-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Smooth bounce animation for the mouse */
+@keyframes scrollBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(6px); }
+}
+.animate-scroll {
+    animation: scrollBounce 2s infinite ease-in-out;
+}

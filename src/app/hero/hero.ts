@@ -1,27 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import {Component, inject, OnInit} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-hero',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './hero.html', // Verifique se o nome do arquivo HTML está correto aqui
-  styles: [`
-    /* Custom utility for the hollow text effect if needed */
-    .text-shadow-lg {
-      text-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
-    }
-    
-    /* Smooth bounce animation for the mouse */
-    @keyframes scrollBounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(6px); }
-    }
-    .animate-scroll {
-      animation: scrollBounce 2s infinite ease-in-out;
-    }
-  `]
+  styleUrls: ['./hero.css'],
 })
 export class HeroComponent implements OnInit {
 
@@ -33,12 +19,10 @@ export class HeroComponent implements OnInit {
     viewers: '125K',
     channel: 'gaules' // Nome exato do canal na URL da twitch
   };
-
   // Variável que vai guardar a URL segura
   twitchUrl: SafeResourceUrl | undefined;
-
   // Injetamos o Sanitizer no construtor
-  constructor(private sanitizer: DomSanitizer) {}
+  protected sanitizer = inject(DomSanitizer);
 
   ngOnInit() {
     this.setupTwitchUrl();
