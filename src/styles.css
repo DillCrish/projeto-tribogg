@@ -1,8 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+/* 1. Importa a fonte do Google */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
+/* 2. Importa o Tailwind */
 @import "tailwindcss";
 
+/* 3. Configura o Tema (Essa é a nova config do Tailwind v4) */
 @theme {
+  /* Define a DM Sans como a fonte padrão do site */
+  --font-sans: "DM Sans", sans-serif;
+  --color-brand: #0178FF;       /* Cor da marca principal - Azul */
+  --color-brand-hover: #005DC7; /* Cor da marca em hover - Azul */
+  --color-secondary: #F8D804;
+  --color-secondary-hover: #CEB300;
+  --color-title: #333842;
+  --color-subtle-gray: #8E96A1;
+  --color-body: #535C6A;
+  --color-brand-readable: #3393FF;
+  --color-ondark: #FFFFFF;
+   --color-dark: #1A1C1F;
+   --color-subtle: #E4E8EF;
+
+  /* Sua animação existente */
   --animate-slide-down: slide-down 0.3s ease-out forwards;
 
   @keyframes slide-down {
@@ -17,9 +35,13 @@
   }
 }
 
+/* O restante do seu arquivo (wrapper, etc) continua igual abaixo... */
 @layer utilities {
-  /* Wrapper Global para padronizar a responsividade */
   .wrapper {
     @apply w-full mx-auto px-6 md:px-12 lg:px-20 max-w-[1600px];
   }
+
+  html, body {
+  font-family: "DM Sans", sans-serif;
+}
 }
