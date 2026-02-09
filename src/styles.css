@@ -10,15 +10,15 @@
   --font-sans: "DM Sans", sans-serif;
   --color-brand: #0178FF;       /* Cor da marca principal - Azul */
   --color-brand-hover: #005DC7; /* Cor da marca em hover - Azul */
-  --color-secondary: #F8D804;
-  --color-secondary-hover: #CEB300;
-  --color-title: #333842;
-  --color-subtle-gray: #8E96A1;
-  --color-body: #535C6A;
-  --color-brand-readable: #3393FF;
-  --color-ondark: #FFFFFF;
-   --color-dark: #1A1C1F;
-   --color-subtle: #E4E8EF;
+  --color-secondary: #F8D804;  /* Cor secundária - Amarelo */
+  --color-secondary-hover: #CEB300; /* Cor secundária em hover - Amarelo */
+  --color-title: #333842;      /* Cor do título - Cinza escuro */
+  --color-subtle-gray: #8E96A1; /* Cor de subtítulos - Cinza claro */  
+  --color-body: #535C6A; /* Cor dos textos de corpo - Cinza médio */
+  --color-brand-readable: #3393FF; /* Cor da marca legível - Azul um pouco mais escuro */
+  --color-ondark: #FFFFFF; /* Cores em cima de tons escuros - Branco */
+   --color-dark: #1A1C1F; /* Cores em tons escuros (usada em backgrounds etc) - Cinza escuro */
+   --color-subtle: #E4E8EF; 
 
   /* Sua animação existente */
   --animate-slide-down: slide-down 0.3s ease-out forwards;

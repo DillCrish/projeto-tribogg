@@ -5,6 +5,7 @@ import { RouterOutlet } from '@angular/router';
 import { Navbar } from './navbar/navbar';
 import { HeroComponent } from './hero/hero';
 import { About } from './about/about';
+import { Streamers } from './streamers/streamers';
 
 // 1. IMPORTS DO FONTAWESOME (Novos)
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
@@ -32,7 +33,7 @@ import { faHeart as faHeartRegular } from '@fortawesome/free-regular-svg-icons';
 @Component({
     selector: 'app-root',
     // Mantive seus componentes aqui
-    imports: [RouterOutlet, Navbar, HeroComponent, About],
+    imports: [Navbar, HeroComponent, About, Streamers],
     templateUrl: './app.html',
     styleUrl: './app.css',
 })
