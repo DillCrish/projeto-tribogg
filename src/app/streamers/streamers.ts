@@ -1,12 +1,12 @@
 import { Component, inject } from '@angular/core'; // 1. Adicionei 'inject'
-import { CommonModule } from '@angular/common';
+import {CommonModule, NgOptimizedImage} from '@angular/common';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser'; // 2. Adicionei esses imports
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { 
-  faArrowRight, 
-  faChevronLeft, 
-  faChevronRight, 
-  faCheckCircle, 
+import {
+  faArrowRight,
+  faChevronLeft,
+  faChevronRight,
+  faCheckCircle,
   faHelmetSafety,
   faSignal
 } from '@fortawesome/free-solid-svg-icons';
@@ -21,14 +21,14 @@ interface Streamer {
   viewers: string;
   thumbnailUrl: string; // Mantive caso queira usar como fallback
   avatarUrl: string;
-  ctaImage: string; 
-  color: string; 
+  ctaImage: string;
+  color: string;
 }
 
 @Component({
   selector: 'app-streamers',
   standalone: true,
-  imports: [CommonModule, FontAwesomeModule],
+    imports: [CommonModule, FontAwesomeModule, NgOptimizedImage],
   templateUrl: './streamers.html',
   styleUrls: ['./streamers.css']
 })
@@ -52,43 +52,43 @@ export class Streamers {
     {
       id: 1,
       name: 'Gaules',
-      channelName: 'gaules', 
+      channelName: 'gaules',
       title: 'Lobby do Alastro! Siga @Gaules',
       game: 'COUNTER-STRIKE 2',
       viewers: '12.1 mil',
       thumbnailUrl: 'https://static-cdn.jtvnw.net/previews-ttv/live_user_gaules-440x248.jpg',
       avatarUrl: '/images/gaules-thumb-stream.png',
-      ctaImage: '/images/gaules-thumb-stream.png', 
-      color: 'bg-[#0070f3]' 
+      ctaImage: '/images/gaules-thumb-stream.png',
+      color: 'bg-[#0070f3]'
     },
     {
       id: 2,
       name: 'Liminha',
-      channelName: 'liminhag0d', 
+      channelName: 'liminhag0d',
       title: 'Transmissão Oficial do Major - Dia 3',
       game: 'COUNTER-STRIKE 2',
       viewers: '8.5 mil',
       thumbnailUrl: 'https://placehold.co/600x340/004d40/FFF?text=Stats+Screen',
       avatarUrl: '/images/gaules-thumb-stream.png',
       ctaImage: 'https://placehold.co/200x200/transparent/FFF?text=Liminha',
-      color: 'bg-[#0070f3]' 
+      color: 'bg-[#0070f3]'
     },
     {
       id: 3,
       name: 'VelhoVamp',
-      channelName: 'velhovamp', 
+      channelName: 'velhovamp',
       title: 'JEFF do largados e pelados merece respeito',
       game: 'SÓ NA CONVERSA',
       viewers: '12.1 mil',
       thumbnailUrl: 'https://placehold.co/600x340/333/FFF?text=Racing+Sim',
       avatarUrl: '/images/velhovamp-thumb-stream.png',
       ctaImage: '/images/velhovamp-thumb-stream.png',
-      color: 'bg-[#0070f3]' 
+      color: 'bg-[#0070f3]'
     },
     {
       id: 4,
       name: 'Mch',
-      channelName: 'mch_agg', 
+      channelName: 'mch_agg',
       title: 'Analisando as táticas da FURIA',
       game: 'VALORANT',
       viewers: '5.2 mil',
