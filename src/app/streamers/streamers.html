@@ -1,101 +1,114 @@
 <section class="bg-subtle py-16 relative overflow-hidden">
-  
-  <div class="container mx-auto px-6 lg:px-20">
 
-    <div class="flex flex-col md:flex-row justify-between items-end mb-10 gap-4">
-        <div class="flex flex-col items-start">
-            <h4 class="text-subtle-gray font-semibold uppercase text-base tracking-[0.65em] mb-6">
+    <div class="container mx-auto px-6 lg:px-20">
+
+        <div class="flex flex-col md:flex-row justify-between items-end mb-10 gap-4">
+            <div class="flex flex-col items-start">
+                <h4 class="text-subtle-gray font-semibold uppercase text-base tracking-[0.65em] mb-6">
                     STREAMERS AO VIVO
                 </h4>
-            <h2 class="text-2xl md:text-[40px] text-title font-bold tracking-tight flex items-center gap-3">
-                <img src="/images/logo-blue.svg" class="w-12 h-12">
+                <h2 class="text-2xl md:text-[40px] text-title font-bold tracking-tight flex items-center gap-3">
+                    <img ngSrc="/images/logo-blue.svg" class="w-12 h-12" height="32" width="50" alt="logo-blue">
                     De tudo quanto é estilo, <span class="font-bold text-brand">para todos os gostos!</span>
-            </h2>
+                </h2>
+            </div>
+
+            <a href="#"
+               class="hidden md:flex items-center gap-2 text-brand text-[14px] font-bold uppercase tracking-widest hover:text-brand-hover transition mb-1 group">
+                Ver todos
+                <fa-icon [icon]="faArrowRight"
+                         class="transform group-hover:translate-x-1 transition-transform"></fa-icon>
+            </a>
         </div>
-        
-        <a href="#" class="hidden md:flex items-center gap-2 text-brand text-[14px] font-bold uppercase tracking-widest hover:text-brand-hover transition mb-1 group">
-            Ver todos 
-            <fa-icon [icon]="faArrowRight" class="transform group-hover:translate-x-1 transition-transform"></fa-icon>
-        </a>
-    </div>
 
-    <div class="relative w-full">
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            
-            <div *ngFor="let stream of visibleStreamers" class="w-full h-80 relative group rounded-xl overflow-hidden shadow-lg bg-black aspect-video transform transition-all hover:scale-[1.01] duration-300">
-                
-                <div class="absolute inset-0 z-0 pointer-events-none">
-                    <iframe
-                        [src]="getStreamUrl(stream.channelName)"
-                        class="w-full h-full object-cover"
-                        allowfullscreen>
-                    </iframe>
-                </div>
+        <div class="relative w-full">
 
-                
-                <div class="absolute top-5 left-4 bg-dark backdrop-blur-sm text-ondark text-[10px] font-bold px-2 py-1 rounded z-10">
-                    {{ stream.viewers }} espectadores
-                </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-                <div class="absolute bottom-1 inset-x-1 h-[85px] bg-brand z-20 flex items-center p-1 rounded-lg transition-transform duration-300 group-hover:translate-y-[110%]">    
-                    <div class="flex items-center w-full gap-4">
-                        <div class="relative shrink-0">
-                            <img [src]="stream.avatarUrl" class="w-20 h-20 rounded-lg object-cover ">
-                             <div class="absolute -bottom-1 -right-1 w-3 h-3 bg-[#00f2ea] rounded-full border-2 border-[#0070f3]"></div>
+                @for (stream of visibleStreamers; track stream) {
+
+                    <div class="w-full h-80 relative group rounded-xl overflow-hidden shadow-lg bg-black aspect-video transform transition-all hover:scale-[1.01] duration-300">
+
+                        <div class="absolute inset-0 z-0 pointer-events-none">
+                            <iframe
+                                [src]="getStreamUrl(stream.channelName)"
+                                class="w-full h-full object-cover"
+                                allowfullscreen
+                                loading="lazy">
+                            </iframe>
                         </div>
 
-                        <div class="flex flex-col flex-1 min-w-0 pr-2">
-                            <h3 class="text-ondark text-[15px] leading-tight font-semibold line-clamp-2 mb-1" title="{{stream.title}}">
-                                {{ stream.title }}
-                            </h3>
-                            <div class="flex items-center justify-between">
+                        <div
+                            class="absolute top-5 left-4 bg-dark backdrop-blur-sm text-ondark text-[10px] font-bold px-2 py-1 rounded z-10">
+                            {{ stream.viewers }} espectadores
+                        </div>
+
+                        <div
+                            class="absolute bottom-1 inset-x-1 h-[85px] bg-brand z-20 flex items-center p-1 rounded-lg transition-transform duration-300 group-hover:translate-y-[110%]">
+                            <div class="flex items-center w-full gap-4">
+                                <div class="relative shrink-0">
+                                    <img [ngSrc]="stream.avatarUrl" width="1000" height="1000" class="w-20 h-20 rounded-lg object-cover ">
+                                    <div
+                                        class="absolute -bottom-1 -right-1 w-3 h-3 bg-[#00f2ea] rounded-full border-2 border-[#0070f3]"></div>
+                                </div>
+
+                                <div class="flex flex-col flex-1 min-w-0 pr-2">
+                                    <h3 class="text-ondark text-[15px] leading-tight font-semibold line-clamp-2 mb-1"
+                                        title="{{stream.title}}">
+                                        {{ stream.title }}
+                                    </h3>
+                                    <div class="flex items-center justify-between">
                                 <span class="text-ondark/90 text-[14px] font-bold flex items-center gap-1">
-                                    {{ stream.name }} <fa-icon [icon]="faCheckCircle" class="text-secondary text-[12px]"></fa-icon>
+                                    {{ stream.name }}
+                                    <fa-icon [icon]="faCheckCircle" class="text-secondary text-[12px]"></fa-icon>
                                 </span>
-                                <span class="text-secondary text-[12px] font-bold uppercase tracking-wider truncate ml-2">
+                                        <span
+                                            class="text-secondary text-[12px] font-bold uppercase tracking-wider truncate ml-2">
                                     {{ stream.game }}
                                 </span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
 
-                <div [ngClass]="stream.color" class="absolute inset-x-0 bottom-0 h-[90px] flex items-center justify-between px-1 pr-4 translate-y-[110%] group-hover:translate-y-0 transition-transform duration-500 ease-out z-30 shadow-[0_-5px_20px_rgba(0,0,0,0.2)]">
-                    <div class="flex items-center gap-4">
-                        <img [src]="stream.ctaImage" class="h-20 -mt-0 object-cover drop-shadow-xl filter brightness-110">
-                        
-                        <div class="flex flex-col text-ondark">
-                            <span class="font-black text-2xl leading-none tracking-tight">ASSISTIR</span>
-                            <span class="font-black text-2xl leading-none text-secondary tracking-tight">TRANSMISSÃO</span>
+                        <div [ngClass]="stream.color"
+                             class="absolute inset-x-0 bottom-0 h-[90px] flex items-center justify-between px-1 pr-4 translate-y-[110%] group-hover:translate-y-0 transition-transform duration-500 ease-out z-30 shadow-[0_-5px_20px_rgba(0,0,0,0.2)]">
+                            <div class="flex items-center gap-4">
+                                <img [ngSrc]="stream.ctaImage" height="1000" width="1000"
+                                     class="h-20 mt-0 object-cover drop-shadow-xl filter brightness-110" alt="ctaImage">
+
+                                <div class="flex flex-col text-ondark">
+                                    <span class="font-black text-2xl leading-none tracking-tight">ASSISTIR</span>
+                                    <span class="font-black text-2xl leading-none text-secondary tracking-tight">TRANSMISSÃO</span>
+                                </div>
+                            </div>
+
+                            <div
+                                class="w-10 h-10 rounded-full bg-ondark/20 flex items-center justify-center backdrop-blur-sm group-hover:bg-ondark group-hover:text-brand-hover transition-colors duration-300">
+                                <fa-icon [icon]="faArrowRight" class="text-lg"></fa-icon>
+                            </div>
                         </div>
-                    </div>
-                    
-                    <div class="w-10 h-10 rounded-full bg-ondark/20 flex items-center justify-center backdrop-blur-sm group-hover:bg-ondark group-hover:text-brand-hover transition-colors duration-300">
-                         <fa-icon [icon]="faArrowRight" class="text-lg"></fa-icon>
-                    </div>
-                </div>
 
-                <a [href]="'https://twitch.tv/' + stream.channelName" target="_blank" class="absolute inset-0 z-40 cursor-pointer"></a>
+                        <a [href]="'https://twitch.tv/' + stream.channelName" target="_blank"
+                           class="absolute inset-0 z-40 cursor-pointer"></a>
+                    </div>
+                }
+            </div>
 
+            <div class="flex justify-center items-center gap-4 mt-10">
+                <button (click)="prev()"
+                        class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200"
+                        [ngClass]="currentIndex === 0 ? 'text-gray-300 cursor-not-allowed' : 'text-gray-400 hover:text-[#0070f3] hover:bg-gray-200'">
+                    <fa-icon [icon]="faChevronLeft" class="text-xl"></fa-icon>
+                </button>
+
+                <button (click)="next()"
+                        class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200"
+                        [ngClass]="(currentIndex + itemsPerPage) >= streamers.length ? 'text-gray-300 cursor-not-allowed' : 'text-gray-400 hover:text-[#0070f3] hover:bg-gray-200'">
+                    <fa-icon [icon]="faChevronRight" class="text-xl"></fa-icon>
+                </button>
             </div>
 
         </div>
-
-        <div class="flex justify-center items-center gap-4 mt-10">
-            <button (click)="prev()" 
-                    class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200"
-                    [ngClass]="currentIndex === 0 ? 'text-gray-300 cursor-not-allowed' : 'text-gray-400 hover:text-[#0070f3] hover:bg-gray-200'">
-                <fa-icon [icon]="faChevronLeft" class="text-xl"></fa-icon>
-            </button>
-            
-            <button (click)="next()" 
-                    class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200"
-                    [ngClass]="(currentIndex + itemsPerPage) >= streamers.length ? 'text-gray-300 cursor-not-allowed' : 'text-gray-400 hover:text-[#0070f3] hover:bg-gray-200'">
-                <fa-icon [icon]="faChevronRight" class="text-xl"></fa-icon>
-            </button>
-        </div>
-
     </div>
-  </div>
 </section>
