@@ -2,13 +2,13 @@
   <div class="container mx-auto px-6 lg:px-12">
 
 
-    <div class="flex  justify-between gap-6 text-[10px] md:text-xs font-bold uppercase tracking-widest text-title">
+    <div class="flex justify-between gap-6 text-[10px] md:text-xs font-bold uppercase tracking-widest text-title">
         <h4 class="text-subtle-gray font-semibold uppercase text-base tracking-[0.65em] mb-3">Calendário</h4> 
-        <a href="#" class="flex items-center gap-2 hover:text-brand transition">
-          Calendário Completo <fa-icon [icon]="faList"></fa-icon>
+        <a href="#" class="hidden md:flex items-center md:gap-2 hover:text-brand transition">
+          Calendário Completo <fa-icon [icon]="faList" class="md:flex hidden"></fa-icon>
         </a>
 
-        <a href="#" class="flex items-center gap-2 hover:text-brand transition">
+        <a href="#" class="hidden md:flex items-center gap-1 hover:text-brand transition">
           Listagem de Campeonatos <fa-icon [icon]="faChevronRight"></fa-icon>
         </a>
       </div>
