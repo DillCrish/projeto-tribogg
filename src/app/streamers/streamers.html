@@ -85,13 +85,13 @@
         <div class="flex justify-center items-center gap-4 mt-10">
             <button (click)="prev()" 
                     class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200"
-                    [ngClass]="currentIndex === 0 ? 'text-gray-300 cursor-not-allowed' : 'text-gray-400 hover:text-[#0070f3] hover:bg-gray-200'">
+                    [ngClass]="currentIndex === 0 ? 'text-gray-300 cursor-not-allowed' : 'text-gray-400 hover:text-brand hover:bg-gray-200'">
                 <fa-icon [icon]="faChevronLeft" class="text-xl"></fa-icon>
             </button>
             
             <button (click)="next()" 
                     class="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200"
-                    [ngClass]="(currentIndex + itemsPerPage) >= streamers.length ? 'text-gray-300 cursor-not-allowed' : 'text-gray-400 hover:text-[#0070f3] hover:bg-gray-200'">
+                    [ngClass]="(currentIndex + itemsPerPage) >= streamers.length ? 'text-gray-300 cursor-not-allowed' : 'text-gray-400 hover:text-brand hover:bg-gray-200'">
                 <fa-icon [icon]="faChevronRight" class="text-xl"></fa-icon>
             </button>
         </div>

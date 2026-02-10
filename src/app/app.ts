@@ -6,6 +6,7 @@ import { Navbar } from './navbar/navbar';
 import { HeroComponent } from './hero/hero';
 import { About } from './about/about';
 import { Streamers } from './streamers/streamers';
+import { CalendarComponent } from './calendar/calendar'; // Importei o componente de calendário 
 
 // 1. IMPORTS DO FONTAWESOME (Novos)
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
@@ -33,7 +34,7 @@ import { faHeart as faHeartRegular } from '@fortawesome/free-regular-svg-icons';
 @Component({
     selector: 'app-root',
     // Mantive seus componentes aqui
-    imports: [Navbar, HeroComponent, About, Streamers],
+    imports: [Navbar, HeroComponent, About, Streamers, CalendarComponent],
     templateUrl: './app.html',
     styleUrl: './app.css',
 })
