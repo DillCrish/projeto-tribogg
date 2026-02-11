@@ -1,0 +1,14 @@
+/* Esconde a barra de rolagem mas permite rolar */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* Garante que o container ocupe a largura correta para o calculo de centro */
+.team-card {
+    /* Impede que a imagem distorça */
+    flex-shrink: 0; 
+}

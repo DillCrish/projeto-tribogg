@@ -1,0 +1,52 @@
+<section class="bg-white pt-10 pb-24 overflow-hidden w-full select-none">
+    <div #carousel
+         (scroll)="onScroll()"
+         (mousedown)="startDrag($event)"
+         (mouseleave)="stopDrag()"
+         (mouseup)="stopDrag()"
+         (mousemove)="moveDrag($event)"
+         class="flex items-center gap-6 overflow-x-auto no-scrollbar h-[600px] cursor-grab active:cursor-grabbing py-8 px-[50vw]"> 
+         <div *ngFor="let member of displayMembers; let i = index"
+           class="team-card relative shrink-0 rounded-[32px] overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.25,0.8,0.25,1)] shadow-xl bg-gray-100"
+           [ngClass]="i === activeIndex 
+              ? 'w-[800px] h-[500px] opacity-100 scale-100 z-20 shadow-2xl grayscale-0' 
+              : 'w-[500px] h-[450px] opacity-100 scale-95 z-10 brightness-[0.8] grayscale-[0.3] hover:brightness-100 hover:grayscale-0'">
+        
+        <img [src]="member.imageUrl" 
+             class="w-full h-full object-cover object-top pointer-events-none transition-transform duration-1000"
+             [class.scale-110]="i === activeIndex"
+             alt="{{ member.name }}">
+        
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0070f3] via-[#0070f3]/20 to-transparent transition-opacity duration-500"
+             [ngClass]="i === activeIndex ? 'opacity-90' : 'opacity-0'">
+        </div>
+
+        <div class="absolute inset-0 flex flex-col justify-end p-12 text-left transition-all duration-500 transform"
+             [ngClass]="i === activeIndex ? 'translate-y-0 opacity-100 delay-100' : 'translate-y-10 opacity-0'">
+            
+            <div class="overflow-hidden mb-2">
+                <span class="block text-white/90 text-sm font-bold tracking-[0.3em] uppercase animate-in slide-in-from-bottom-2">
+                    {{ member.role }}
+                </span>
+            </div>
+
+            <h3 class="text-white text-[100px] leading-[0.85] font-black tracking-tighter lowercase drop-shadow-lg">
+                {{ member.name }}
+            </h3>
+            
+            <div class="w-12 h-1.5 bg-white mt-6 rounded-full"></div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="flex justify-center items-center gap-3 mt-2">
+        <button *ngFor="let m of originalMembers; let i = index"
+                (click)="scrollToRealIndex(i)"
+                class="h-1.5 rounded-full transition-all duration-500"
+                [ngClass]="i === realActiveIndex ? 'w-12 bg-[#0070f3]' : 'w-2 bg-gray-300 hover:bg-gray-400'">
+        </button>
+    </div>
+
+</section>
