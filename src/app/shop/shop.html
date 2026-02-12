@@ -1,0 +1,80 @@
+<section class="bg-ondark py-20 font-sans overflow-hidden w-full">
+    <div class="flex flex-col lg:flex-row gap-8">
+        <div
+            class="w-full lg:w-[450px] lg:h-[620px] shrink-0 bg-brand rounded-r-3xl lg:rounded-r-3xl lg:rounded-l-none rounded-3xl relative overflow-hidden min-h-[500px] flex flex-col justify-center items-center"
+        >
+            <img src="images/triboshop.png" class="absolute inset-0 w-full h-full object-cover" />
+        </div>
+
+        <div class="flex-1 flex flex-col justify-between min-w-0 pr-4 lg:pr-62 pl-4 lg:pl-0">
+            <div
+                #productCarousel
+                class="flex gap-6 overflow-x-auto no-scrollbar pb-4 snap-x snap-mandatory"
+            >
+                <div
+                    *ngFor="let product of products"
+                    class="min-w-[300px] md:min-w-[370px] snap-start"
+                >
+                    <div
+                        class="bg-gray-100 rounded-3xl h-[320px] flex items-center justify-center mb-5 p-6 relative group overflow-hidden cursor-pointer"
+                    >
+                        <img
+                            [src]="product.imageUrl"
+                            class="w-full h-full object-contain group-hover:scale-115 transition-transform duration-600"
+                        />
+
+                        <div class="absolute top-6 right-6 opacity-20">
+                            <svg class="w-6 h-4" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M24 5.8c-2.4.9-5.4 2.2-8.3 4.2C13 11.9 9.6 14.5 5 14.5c-2 0-3.5-.6-3.5-2.2 0-1.7 2-2.5 4.5-2.5 1.5 0 2.9.2 4.1.6l.8-2.3C9.4 7.6 7.4 7.3 5.4 7.3 1.8 7.3 0 9.4 0 12.2c0 3.3 3.1 4.7 6.6 4.7 5.7 0 9.9-3.2 17.4-8.8l-1.8-2.3z"
+                                />
+                            </svg>
+                        </div>
+                    </div>
+
+                    <h3 class="text-title font-bold text-xl mb-2">{{ product.name }}</h3>
+                    <p class="text-body text-md leading-normal pr-2">
+                        {{ product.description }}
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row items-center gap-6">
+                <div
+                    class="flex-1 w-full bg-[#6d5b4f] rounded-2xl overflow-hidden relative h-[150px] flex items-center cursor-pointer group mr-0 md:mr-4"
+                >
+                    <img
+                        src="images/visite nossa pagina.png"
+                        class="absolute inset-0 w-full h-full object-cover opacity-100 group-hover:scale-105 transition-transform duration-700"
+                    />
+
+                    <div class="relative z-10 px-8 md:px-12 flex flex-col text-ondark">
+                        <span class="text-xl md:text-3xl font-bold leading-tight"
+                            >Visite nossa página</span
+                        >
+                        <span class="text-xl md:text-3xl font-bold leading-tight"
+                            >dentro da Nike</span
+                        >
+                    </div>
+                </div>
+
+                <div
+                    class="flex w-full md:w-auto justify-center gap-4 md:gap-0 md:justify-between shrink-0 min-w-[378px] mr-4"
+                >
+                    <button
+                        (click)="scroll('left')"
+                        class="w-14 h-14 rounded-full flex items-center justify-center text-subtle-gray/80 hover:text-brand hover:bg-brand/10 transition-all text-2xl"
+                    >
+                        <fa-icon [icon]="faChevronLeft"></fa-icon>
+                    </button>
+                    <button
+                        (click)="scroll('right')"
+                        class="w-14 h-14 rounded-full flex items-center justify-center text-subtle-gray/80 hover:text-brand hover:bg-brand/10 transition-all text-2xl"
+                    >
+                        <fa-icon [icon]="faChevronRight"></fa-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

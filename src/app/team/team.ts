@@ -24,12 +24,12 @@ export class TeamComponent implements AfterViewInit, OnDestroy {
 
   originalMembers = [
     { id: 1, name: 'Gaules', role: 'STREAMER E CEO', imageUrl: 'images/gaules.png' },
-    { id: 2, name: 'Liminha', role: 'STREAMER', imageUrl: 'images/liminha.jpg' },
-    { id: 3, name: 'Bt0', role: 'STREAMER', imageUrl: 'images/bt0.png' },
-    { id: 4, name: 'VelhoVamp', role: 'STREAMER', imageUrl: 'images/velhovamp.png' },
-    { id: 5, name: 'Apoka', role: 'STREAMER', imageUrl: 'images/apoka.jpg' },
-    { id: 6, name: 'Mch', role: 'STREAMER', imageUrl: 'images/mch.jpg' },
-    { id: 7, name: 'llauqS', role: 'STREAMER', imageUrl: 'images/llauqs.png' },
+    { id: 2, name: 'Liminha', role: 'STREAMER E REI DELAS', imageUrl: 'images/liminha.jpg' },
+    { id: 3, name: 'Bt0', role: 'STREAMER, EX jogador e capitão de CS 1.6 e CS:GO ', imageUrl: 'images/bt0.png' },
+    { id: 4, name: 'VelhoVamp', role: 'Treinador do G3X, Streamer e Piloto', imageUrl: 'images/velhovamp.png' },
+    { id: 5, name: 'Apoka', role: 'STREAMER E COMISSÃO TÉCNICA G3X', imageUrl: 'images/apoka.jpg' },
+    { id: 6, name: 'Mch', role: 'STREAMER E EX JOGADOR', imageUrl: 'images/mch.jpg' },
+    { id: 7, name: 'llauqS', role: 'STREAMER E CASTER', imageUrl: 'images/llauqs.png' },
   ];
 
   displayMembers: TeamMember[] = [];
