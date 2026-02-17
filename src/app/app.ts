@@ -2,15 +2,15 @@ import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 // SEUS COMPONENTES (Mantidos)
-import { Navbar } from './navbar/navbar';
-import { HeroComponent } from './hero/hero';
-import { About } from './about/about';
-import { Streamers } from './streamers/streamers';
-import { CalendarComponent } from './calendar/calendar';
-import { TeamComponent } from './team/team'; 
-import { NewsComponent } from './news/news';
-import { ShopComponent } from './shop/shop';
-import { FooterComponent } from './footer/footer';
+import { Navbar } from './home/navbar/navbar';
+import { HeroComponent } from './home/hero/hero';
+import { About } from './home/about/about';
+import { Streamers } from './home/streamers/streamers';
+import { CalendarComponent } from './home/calendar/calendar';
+import { TeamComponent } from './home/team/team';
+import { NewsComponent } from './home/news/news';
+import { ShopComponent } from './home/shop/shop';
+import { FooterComponent } from './home/footer/footer';
 
 // 1. IMPORTS DO FONTAWESOME (Novos)
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
