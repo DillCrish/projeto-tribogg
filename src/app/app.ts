@@ -1,44 +1,35 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {Component, signal} from '@angular/core';
+import {RouterOutlet} from '@angular/router';
 
 // SEUS COMPONENTES (Mantidos)
-import { Navbar } from './home/navbar/navbar';
-import { HeroComponent } from './home/hero/hero';
-import { About } from './home/about/about';
-import { Streamers } from './home/streamers/streamers';
-import { CalendarComponent } from './home/calendar/calendar';
-import { TeamComponent } from './home/team/team';
-import { NewsComponent } from './home/news/news';
-import { ShopComponent } from './home/shop/shop';
-import { FooterComponent } from './home/footer/footer';
 
 // 1. IMPORTS DO FONTAWESOME (Novos)
-import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import {FaIconLibrary} from '@fortawesome/angular-fontawesome';
 // Ícones de Marcas (Brands)
-import { faTwitch, faDiscord, faXTwitter } from '@fortawesome/free-brands-svg-icons';
+import {faDiscord, faTwitch, faXTwitter} from '@fortawesome/free-brands-svg-icons';
 // Ícones Sólidos (Solid)
 import {
-    faUser,
-    faBars,
-    faPlay,
-    faHeart,
-    faChevronDown,
-    faChevronUp,
-    faArrowRight,
-    faCartShopping,
-    faCircleCheck,
-    faPaperPlane,
-    faListUl,
     faAngleLeft,
     faAngleRight,
+    faArrowRight,
+    faBars,
+    faCartShopping,
+    faChevronDown,
+    faChevronUp,
+    faCircleCheck,
+    faHeart,
+    faListUl,
+    faPaperPlane,
+    faPlay,
+    faUser,
 } from '@fortawesome/free-solid-svg-icons';
 // Ícones Regulares/Outline (Regular)
-import { faHeart as faHeartRegular } from '@fortawesome/free-regular-svg-icons';
+import {faHeart as faHeartRegular} from '@fortawesome/free-regular-svg-icons';
 
 @Component({
     selector: 'app-root',
     // Mantive seus componentes aqui
-    imports: [Navbar, HeroComponent, About, Streamers, CalendarComponent, TeamComponent, NewsComponent, ShopComponent, FooterComponent],
+    imports: [RouterOutlet],
     templateUrl: './app.html',
     styleUrl: './app.css',
 })
